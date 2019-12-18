@@ -1,16 +1,46 @@
 package sample.database;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.*;
 
 
 public class SQLiteJDBC {
+
+    //Delimiter used in CSV file
+    private static final String COMMA_DELIMITER = ",";
+    private static final String NEW_LINE_SEPARATOR = "\n";
+
+    //CSV file header
+    private static final String FILE_HEADER = "date, customerid, customername, branch, branchcode, password";
 
     public static void createNewDatabase() {
 
         File file = new File("C:/winDairy");
         if (!file.exists())
             file.mkdir();
+
+        File logFile = new File("C:/winDairy/log.csv");
+        if(!logFile.exists()) {
+            try {
+                logFile.createNewFile();
+//                FileWriter fileWriter = null;
+//
+//                fileWriter = new FileWriter(logFile, true);
+//
+//                //Write the CSV file header
+//                fileWriter.append(FILE_HEADER);
+//
+//                //Add a new line separator after the header
+//                fileWriter.append(NEW_LINE_SEPARATOR);
+
+                System.out.println("CSV file was created successfully !!!");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
         String url = "jdbc:sqlite:C:/winDairy/base.db";
 

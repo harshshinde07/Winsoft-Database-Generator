@@ -10,6 +10,8 @@ import javafx.stage.Stage;
 import org.apache.commons.lang3.StringUtils;
 import sample.database.SQLiteJDBC;
 import sample.utils.AlertMaker;
+import sample.utils.CSVWriter;
+import sample.utils.Util;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -73,6 +75,10 @@ public class Controller implements Initializable {
 
         if (res == 0) {
             AlertMaker.showSimpleAlert("Success", "Database created Successfully.\n Please check C:/winDairy/ folder.");
+
+            Long startTime = System.currentTimeMillis();
+            String date = Util.formatDateTimeString(startTime);
+            CSVWriter.writeCsvFile(date, mID, mName, mBranch, mBranchCode, mPassword);
             System.exit(0);
         } else {
             AlertMaker.showErrorMessage("Failed", "Couldn't create the database.\n Please try again later.");

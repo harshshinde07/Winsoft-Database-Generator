@@ -6,13 +6,21 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Change database schema, perform database operations on a separate thread">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/utils/CSVWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Winsoft/sample/database/SQLiteJDBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Winsoft/sample/database/SQLiteJDBC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Winsoft/sample/login/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Winsoft/sample/login/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Winsoft/sample/main/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Winsoft/sample/main/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Winsoft/sample/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Winsoft/sample/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Winsoft/sample/utils/Preferences.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Winsoft/sample/utils/Preferences.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Winsoft/sample/utils/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Winsoft/sample/utils/Util.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/database/SQLiteJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/database/SQLiteJDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/login/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/login/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/main/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/main/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/utils/Preferences.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/utils/Preferences.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/utils/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/utils/Util.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -112,6 +120,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
@@ -228,8 +237,16 @@
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1576598733172" duration="7222000" />
-      <workItem from="1576633830943" duration="10682000" />
+      <workItem from="1576633830943" duration="17132000" />
     </task>
+    <task id="LOCAL-00001" summary="Change database schema, perform database operations on a separate thread">
+      <created>1576655351576</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1576655351576</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,5 +266,7 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <MESSAGE value="Change database schema, perform database operations on a separate thread" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change database schema, perform database operations on a separate thread" />
   </component>
 </project>
