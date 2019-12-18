@@ -11,6 +11,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+
         Parent root = FXMLLoader.load(getClass().getResource("/sample/login/login.fxml"));
 
         Scene scene = new Scene(root);
@@ -20,11 +21,6 @@ public class Main extends Application {
         stage.setTitle("Winsoft Login");
 
         Util.setStageIcon(stage);
-
-        new Thread(() -> {
-            // TODO Handle database
-//            DatabaseHandler.getInstance();
-        }).start();
     }
 
     public static void main(String[] args) {

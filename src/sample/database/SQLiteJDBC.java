@@ -93,7 +93,7 @@ public class SQLiteJDBC {
 
         String url = "jdbc:sqlite:C:/winDairy/base.db";
 
-        String sql = "CREATE TABLE `user` ( `userid` INTEGER, `username` TEXT, `branch` TEXT, `branchCode` INTEGER, `password` TEXT )";
+        String sql = "CREATE TABLE `customer` ( `customerid` INTEGER, `customername` TEXT, `branch` TEXT, `branchcode` INTEGER, `password` TEXT )";
 
         try (Connection conn = DriverManager.getConnection(url);
              Statement stmt = conn.createStatement()) {
@@ -107,7 +107,7 @@ public class SQLiteJDBC {
 
         String url = "jdbc:sqlite:C:/winDairy/base.db";
 
-        String sql = "INSERT INTO user (userid, username, branch, branchCode, password) VALUES(?,?,?,?,?)";
+        String sql = "INSERT INTO customer (customerid, customername, branch, branchcode, password) VALUES(?,?,?,?,?)";
 
         try (Connection conn = DriverManager.getConnection(url);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -123,5 +123,4 @@ public class SQLiteJDBC {
         }
         return 0;
     }
-
 }

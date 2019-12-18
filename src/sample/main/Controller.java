@@ -40,9 +40,11 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //Handle database code
-        SQLiteJDBC.createNewDatabase();
-        SQLiteJDBC.createNewTables();
+
+        new Thread(() -> {
+            SQLiteJDBC.createNewDatabase();
+            SQLiteJDBC.createNewTables();
+        }).start();
     }
 
     @FXML
@@ -54,13 +56,11 @@ public class Controller implements Initializable {
     @FXML
     private void createDB(ActionEvent event) {
 
-
         String mID = StringUtils.trimToEmpty(id.getText());
         String mName = StringUtils.trimToEmpty(name.getText());
         String mBranchCode = StringUtils.trimToEmpty(branchCode.getText());
         String mBranch = StringUtils.trimToEmpty(branch.getText());
         String mPassword = StringUtils.trimToEmpty(password.getText());
-
 
         boolean flag = mName.isEmpty() || mID.isEmpty() || mBranch.isEmpty() || mBranchCode.isEmpty() || mPassword.isEmpty();
         if (flag) {
@@ -73,7 +73,7 @@ public class Controller implements Initializable {
 
         if (res == 0) {
             AlertMaker.showSimpleAlert("Success", "Database created Successfully.\n Please check C:/winDairy/ folder.");
-//            System.exit(0);
+            System.exit(0);
         } else {
             AlertMaker.showErrorMessage("Failed", "Couldn't create the database.\n Please try again later.");
         }

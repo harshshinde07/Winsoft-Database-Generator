@@ -25,7 +25,7 @@ public class LoginController implements Initializable {
     @FXML
     private JFXPasswordField password;
 
-    Preferences preference;
+    private Preferences preference;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -56,7 +56,7 @@ public class LoginController implements Initializable {
         ((Stage) username.getScene().getWindow()).close();
     }
 
-    void loadMain() {
+    private void loadMain() {
         try {
             Parent parent = FXMLLoader.load(getClass().getResource("/sample/main/main.fxml"));
             Stage stage = new Stage(StageStyle.DECORATED);
