@@ -81,7 +81,7 @@ public class SQLiteJDBC {
 
         String url = "jdbc:sqlite:C:/winDairy/base.db";
 
-        String sql = "CREATE TABLE IF NOT EXISTS `ratemst` ( `rtgrno` INTEGER, `RtDate` NUMERIC, `cobf` TEXT, `rtno` INTEGER, `fat` REAL, `rate` REAL, `degree` REAL, `snf` REAL )";
+        String sql = "CREATE TABLE IF NOT EXISTS `ratemst` ( `rtgrno` INTEGER, `RtDate` NUMERIC, `cobf` TEXT, `rtno` INTEGER UNIQUE, `fat` REAL, `rate` REAL, `degree` REAL, `snf` REAL )";
 
         try (Connection conn = DriverManager.getConnection(url);
              Statement stmt = conn.createStatement()) {
@@ -109,7 +109,7 @@ public class SQLiteJDBC {
 
         String url = "jdbc:sqlite:C:/winDairy/base.db";
 
-        String sql = "CREATE TABLE IF NOT EXISTS `item` ( `itcode` INTEGER, `itname` TEXT, `opqty` INTEGER, `oprate` REAL, `opbal` REAL, `issue` TEXT, `rece` TEXT, `clqty` INTEGER, `rate` REAL, `purchAc` TEXT, `saleAc` TEXT, `saleCr` REAL )";
+        String sql = "CREATE TABLE IF NOT EXISTS `item` ( `itcode` INTEGER UNIQUE, `itname` TEXT, `opqty` INTEGER, `oprate` REAL, `opbal` REAL, `issue` TEXT, `rece` TEXT, `clqty` INTEGER, `rate` REAL, `purchAc` TEXT, `saleAc` TEXT, `saleCr` REAL )";
 
         try (Connection conn = DriverManager.getConnection(url);
              Statement stmt = conn.createStatement()) {
@@ -123,7 +123,7 @@ public class SQLiteJDBC {
 
         String url = "jdbc:sqlite:C:/winDairy/base.db";
 
-        String sql = "CREATE TABLE `customer` ( `customerid` INTEGER, `customername` TEXT, `branch` TEXT, `branchcode` INTEGER, `password` TEXT )";
+        String sql = "CREATE TABLE `customer` ( `customerid` INTEGER UNIQUE, `customername` TEXT, `branch` TEXT, `branchcode` INTEGER, `password` TEXT )";
 
         try (Connection conn = DriverManager.getConnection(url);
              Statement stmt = conn.createStatement()) {
