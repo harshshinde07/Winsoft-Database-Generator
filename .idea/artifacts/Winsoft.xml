@@ -1,0 +1,31 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Winsoft">
+    <output-path>$PROJECT_DIR$/out/artifacts/Winsoft</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="sample.main.Main" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="Winsoft" />
+        <option name="vendor" value="HARSH" />
+        <option name="version" value="1.0" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="Winsoft.jar">
+        <element id="module-output" name="Winsoft" />
+      </element>
+      <element id="file-copy" path="$USER_HOME$/Downloads/Library-Assistant-master/libs/boxable-1.5-RC.jar" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/Library-Assistant-master/libs/commons-codec-1.11.jar" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/Library-Assistant-master/libs/commons-csv-1.4.jar" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/Library-Assistant-master/libs/commons-lang3-3.9.jar" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/controlsfx-9.0.0.jar" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/Library-Assistant-master/libs/gson-2.8.1.jar" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/Library-Assistant-master/libs/guava-21.0.jar" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/jfoenix-9.0.8.jar" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/Library-Assistant-master/libs/slf4j-api-1.7.25.jar" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/Library-Assistant-master/libs/slf4j-simple-1.7.25.jar" />
+      <element id="file-copy" path="$USER_HOME$/Downloads/sqlite-jdbc-3.27.2.1.jar" />
+    </root>
+  </artifact>
+</component>
