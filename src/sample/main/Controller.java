@@ -14,6 +14,7 @@ import sample.utils.CSVWriter;
 import sample.utils.Util;
 
 import java.net.URL;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -71,7 +72,12 @@ public class Controller implements Initializable {
         }
         SQLiteJDBC db = new SQLiteJDBC();
 
-        int res = db.insert(mID, mName, mBranch, mBranchCode, mPassword);
+        int res = -1;
+        try {
+            res = db.insert(mID, mName, mBranch, mBranchCode, mPassword);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
 
         if (res == 0) {
             AlertMaker.showSimpleAlert("Success", "Database created Successfully.\n Please check C:/winDairy/ folder.");

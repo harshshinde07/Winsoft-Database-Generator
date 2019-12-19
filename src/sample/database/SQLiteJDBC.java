@@ -3,7 +3,11 @@ package sample.database;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 
 
 public class SQLiteJDBC {
@@ -133,19 +137,79 @@ public class SQLiteJDBC {
         }
     }
 
-    public int insert(String id, String name, String branch, String branchCode, String password) {
+    public int insert(String id, String name, String branch, String branchCode, String password) throws NoSuchAlgorithmException {
 
         String url = "jdbc:sqlite:C:/winDairy/base.db";
 
         String sql = "INSERT INTO customer (customerid, customername, branch, branchcode, password) VALUES(?,?,?,?,?)";
 
+
+//        String pattern = "dd-MM-yyyy";
+//        String dateInString =new SimpleDateFormat(pattern).format(System.currentTimeMillis());
+
+        //ID
+        byte[] bytesID = new byte[0];
+        try {
+            bytesID = id.getBytes("UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+        MessageDigest mdID = MessageDigest.getInstance("MD5");
+        byte[] encID = mdID.digest(bytesID);
+
+        //Name
+        byte[] bytesName = new byte[0];
+        try {
+            bytesName = name.getBytes("UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+        MessageDigest mdName = MessageDigest.getInstance("MD5");
+        byte[] encName = mdName.digest(bytesName);
+
+        //Branch
+        byte[] bytesBranch = new byte[0];
+        try {
+            bytesBranch = branch.getBytes("UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+        MessageDigest mdBranch = MessageDigest.getInstance("MD5");
+        byte[] encBranch = mdBranch.digest(bytesBranch);
+
+        //BranchCode
+        byte[] bytesBranchCode = new byte[0];
+        try {
+            bytesBranchCode = branchCode.getBytes("UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+        MessageDigest mdBranchCode = MessageDigest.getInstance("MD5");
+        byte[] encBranchCode = mdBranchCode.digest(bytesBranchCode);
+
+        //Password
+        byte[] bytesPassword = new byte[0];
+        try {
+            bytesPassword = password.getBytes("UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+        MessageDigest mdPassword = MessageDigest.getInstance("MD5");
+        byte[] encPassword = mdPassword.digest(bytesPassword);
+
+
         try (Connection conn = DriverManager.getConnection(url);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, id);
-            pstmt.setString(2, name);
-            pstmt.setString(3, branch);
-            pstmt.setString(4, branchCode);
-            pstmt.setString(5, password);
+            pstmt.setBytes(1, encID);
+            pstmt.setBytes(2, encName);
+            pstmt.setBytes(3, encBranch);
+            pstmt.setBytes(4, encBranchCode);
+            pstmt.setBytes(5, encPassword);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());

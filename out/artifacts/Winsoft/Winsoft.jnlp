@@ -8,7 +8,7 @@
     <update check="background"/>
     <resources>
         <j2se version="10.0.2+" href="http://java.sun.com/products/autodl/j2se"/>
-        <jar href="Winsoft.jar" size="32356" download="eager"/>
+        <jar href="Winsoft.jar" size="33197" download="eager"/>
         <jar href="boxable-1.5-RC.jar" size="58530" download="eager"/>
         <jar href="commons-codec-1.11.jar" size="335042" download="eager"/>
         <jar href="commons-csv-1.4.jar" size="39978" download="eager"/>
