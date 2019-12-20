@@ -155,8 +155,8 @@ public class SQLiteJDBC {
             e.printStackTrace();
         }
 
-        MessageDigest mdID = MessageDigest.getInstance("MD5");
-        byte[] encID = mdID.digest(bytesID);
+//        MessageDigest mdID = MessageDigest.getInstance("MD5");
+//        byte[] encID = mdID.digest(bytesID);
 
         //Name
         byte[] bytesName = new byte[0];
@@ -166,8 +166,8 @@ public class SQLiteJDBC {
             e.printStackTrace();
         }
 
-        MessageDigest mdName = MessageDigest.getInstance("MD5");
-        byte[] encName = mdName.digest(bytesName);
+//        MessageDigest mdName = MessageDigest.getInstance("MD5");
+//        byte[] encName = mdName.digest(bytesName);
 
         //Branch
         byte[] bytesBranch = new byte[0];
@@ -177,8 +177,8 @@ public class SQLiteJDBC {
             e.printStackTrace();
         }
 
-        MessageDigest mdBranch = MessageDigest.getInstance("MD5");
-        byte[] encBranch = mdBranch.digest(bytesBranch);
+//        MessageDigest mdBranch = MessageDigest.getInstance("MD5");
+//        byte[] encBranch = mdBranch.digest(bytesBranch);
 
         //BranchCode
         byte[] bytesBranchCode = new byte[0];
@@ -188,8 +188,8 @@ public class SQLiteJDBC {
             e.printStackTrace();
         }
 
-        MessageDigest mdBranchCode = MessageDigest.getInstance("MD5");
-        byte[] encBranchCode = mdBranchCode.digest(bytesBranchCode);
+//        MessageDigest mdBranchCode = MessageDigest.getInstance("MD5");
+//        byte[] encBranchCode = mdBranchCode.digest(bytesBranchCode);
 
         //Password
         byte[] bytesPassword = new byte[0];
@@ -199,17 +199,17 @@ public class SQLiteJDBC {
             e.printStackTrace();
         }
 
-        MessageDigest mdPassword = MessageDigest.getInstance("MD5");
-        byte[] encPassword = mdPassword.digest(bytesPassword);
+//        MessageDigest mdPassword = MessageDigest.getInstance("MD5");
+//        byte[] encPassword = mdPassword.digest(bytesPassword);
 
 
         try (Connection conn = DriverManager.getConnection(url);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setBytes(1, encID);
-            pstmt.setBytes(2, encName);
-            pstmt.setBytes(3, encBranch);
-            pstmt.setBytes(4, encBranchCode);
-            pstmt.setBytes(5, encPassword);
+            pstmt.setBytes(1, bytesID);
+            pstmt.setBytes(2, bytesName);
+            pstmt.setBytes(3, bytesBranch);
+            pstmt.setBytes(4, bytesBranchCode);
+            pstmt.setBytes(5, bytesPassword);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
